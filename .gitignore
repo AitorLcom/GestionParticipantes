@@ -1,0 +1,36 @@
+# Archivos y carpetas de PyInstaller
+/dist/
+/build/
+*.spec
+
+# Cachés de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Datos locales de desarrollo
+/data/
+*.log
+*.db
+
+# Entornos virtuales
+env/
+venv/
+
+# Configuraciones del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales del sistema operativo
+*.swp
+*.bak
+*.tmp
+
+# Archivos de instalación generados manualmente
+*.exe
+*.msi
+
+# Claves y certificados (si usas PyUpdater en el futuro)
+*.key
+.pyupdater/
