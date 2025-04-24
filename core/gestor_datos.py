@@ -19,11 +19,15 @@ def ruta_archivo(nombre_archivo):
     return ruta_datos_local(nombre_archivo)
 
 def cargar_csv(nombre_archivo):
-    """Carga un archivo CSV como DataFrame. Devuelve DataFrame vacío si no existe."""
+    """Carga un archivo CSV como DataFrame. Devuelve DataFrame vacío si no existe o está malformado."""
     ruta = ruta_archivo(nombre_archivo)
     if not os.path.exists(ruta):
         return pd.DataFrame()
-    return pd.read_csv(ruta)
+    try:
+        return pd.read_csv(ruta)
+    except pd.errors.EmptyDataError:
+        print(f"[AVISO] Archivo CSV vacío: {nombre_archivo}. Se devolverá DataFrame vacío.")
+        return pd.DataFrame()
 
 def guardar_csv(nombre_archivo, dataframe):
     """Guarda un DataFrame en un archivo CSV."""

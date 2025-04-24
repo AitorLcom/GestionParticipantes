@@ -6,6 +6,9 @@ from core import gestor_datos
 from core import datos_cache
 from ui.menu_principal import lanzar_menu
 from estilos import aplicar_estilos
+from actualizador import verificar_actualizacion
+
+verificar_actualizacion()
 
 # Rutas base
 DATA_DIR = "data"
