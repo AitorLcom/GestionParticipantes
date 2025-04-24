@@ -91,8 +91,7 @@ class MenuPrincipal:
 
         # Mensaje de bienvenida
         mensaje = (
-            "Gestor de participantes V 0.3\n\n"
-            "Este sistema permite registrar, asignar y consultar de manera eficiente cada sesión."
+            "Gestor de participantes V 0.4\n\n"
         )
         ttk.Label(
             marco,
