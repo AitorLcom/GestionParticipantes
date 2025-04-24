@@ -1,0 +1,23 @@
+[2025-04-24 14:42:12] Directorio 'data' creado.
+[2025-04-24 14:42:12] Comprobando existencia de archivos CSV requeridos...
+[2025-04-24 14:42:20] Programa finalizado.
+[2025-04-24 14:45:20] Comprobando existencia de archivos CSV requeridos...
+[2025-04-24 14:45:23] Programa finalizado.
+[2025-04-24 14:46:54] Comprobando existencia de archivos CSV requeridos...
+[2025-04-24 14:46:54] Archivo creado: participantes.csv con columnas ['Nombre', 'Género', 'Tipos', 'Última participación', 'Último tipo', 'Última sala']
+[2025-04-24 14:46:54] Archivo creado: participaciones.csv con columnas ['Fecha', 'Número', 'Tipo', 'Género', 'Sala', 'Asignado']
+[2025-04-24 14:46:54] Archivo creado: opciones_tipos.csv con columnas ['Tipos']
+[2025-04-24 14:46:54] Bases de datos encontradas: ['opciones_tipos.csv', 'participaciones.csv', 'participantes.csv']
+[2025-04-24 14:47:18] Programa finalizado.
+[2025-04-24 14:47:23] Comprobando existencia de archivos CSV requeridos...
+[2025-04-24 14:47:23] Archivo creado: participantes.csv con columnas ['Nombre', 'Género', 'Tipos', 'Última participación', 'Último tipo', 'Última sala']
+[2025-04-24 14:47:23] Archivo creado: participaciones.csv con columnas ['Fecha', 'Número', 'Tipo', 'Género', 'Sala', 'Asignado']
+[2025-04-24 14:47:23] Archivo creado: opciones_tipos.csv con columnas ['Tipos']
+[2025-04-24 14:47:23] Bases de datos encontradas: ['opciones_tipos.csv', 'participaciones.csv', 'participantes.csv']
+[2025-04-24 14:47:27] Programa finalizado.
+[2025-04-24 14:51:25] Comprobando existencia de archivos CSV requeridos...
+[2025-04-24 14:51:25] Archivo creado: participantes.csv con columnas ['Nombre', 'Género', 'Tipos', 'Última participación', 'Último tipo', 'Última sala']
+[2025-04-24 14:51:25] Archivo creado: participaciones.csv con columnas ['Fecha', 'Número', 'Tipo', 'Género', 'Sala', 'Asignado']
+[2025-04-24 14:51:25] Archivo creado: opciones_tipos.csv con columnas ['Tipos']
+[2025-04-24 14:51:25] Bases de datos encontradas: ['opciones_tipos.csv', 'participaciones.csv', 'participantes.csv']
+[2025-04-24 14:51:27] Programa finalizado.
