@@ -37,6 +37,7 @@ class VistaAsignador:
         ttk.Button(filtro_frame, text="Mostrar participaciones", command=self._mostrar_participaciones).grid(row=0, column=4, padx=5, pady=5)
         ttk.Button(filtro_frame, text="Asignar participantes", command=self._asignar_participantes).grid(row=0, column=5, padx=5, pady=5)
         ttk.Button(filtro_frame, text="Guardar cambios", command=self._guardar_cambios).grid(row=0, column=6, padx=5, pady=5)
+        ttk.Button(filtro_frame, text="Exportar Archivo", command=self._exportar_csv).grid(row=0, column=7, padx=5, pady=5)
 
         # Tabla de participaciones
         self.tree = ttk.Treeview(self.frame, columns=["Fecha", "Número", "Sala", "Tipo", "Asignado"], show="headings")
@@ -142,3 +143,76 @@ class VistaAsignador:
         actualizar("participaciones", self.participaciones_df)
         guardar_todos()
         messagebox.showinfo("Guardado", "Cambios guardados en la base de datos.")
+
+    def _exportar_csv(self):
+        """Exporta las participaciones con los participantes asignados a un archivo CSV o Excel."""
+        import csv
+        import pandas as pd
+        from tkinter.filedialog import asksaveasfilename
+
+        archivo = asksaveasfilename(defaultextension=".csv", filetypes=[
+            ("CSV files", "*.csv"),
+            ("Excel files", "*.xlsx"),
+            ("ODS files", "*.ods"),
+            ("All files", "*.*")
+        ])
+        if not archivo:
+            return
+
+        # Verificar la extensión del archivo
+        extension = archivo.split(".")[-1].lower()
+
+        if extension == "csv":
+            with open(archivo, mode="w", newline="", encoding="utf-8") as file:
+                writer = csv.writer(file)
+                # Escribir encabezados
+                writer.writerow(["Fecha", "Número", "Sala", "Tipo", "Asignado"])
+
+                # Escribir datos
+                for item in self.tree.get_children():
+                    writer.writerow(self.tree.item(item, "values"))
+
+        elif extension == "xlsx":
+            # Crear un DataFrame para exportar a Excel
+            data = [self.tree.item(item, "values") for item in self.tree.get_children()]
+            df = pd.DataFrame(data, columns=["Fecha", "Número", "Sala", "Tipo", "Asignado"])
+            df.to_excel(archivo, index=False, engine="openpyxl")
+
+        elif extension == "ods":
+            # Crear un DataFrame para exportar a ODS
+            data = [self.tree.item(item, "values") for item in self.tree.get_children()]
+            df = pd.DataFrame(data, columns=["Fecha", "Número", "Sala", "Tipo", "Asignado"])
+            df.to_excel(archivo, index=False, engine="odf")
+
+        else:
+            messagebox.showerror("Error de exportación", "Formato de archivo no compatible.")
+            return
+
+        messagebox.showinfo("Exportación completada", f"Los datos se han exportado correctamente a {archivo}.")
+        if not archivo:
+            return
+
+        # Verificar la extensión del archivo
+        extension = archivo.split(".")[-1].lower()
+
+        if extension == "csv":
+            with open(archivo, mode="w", newline="", encoding="utf-8") as file:
+                writer = csv.writer(file)
+                # Escribir encabezados
+                writer.writerow(["Fecha", "Número", "Sala", "Tipo", "Asignado"])
+
+                # Escribir datos
+                for item in self.tree.get_children():
+                    writer.writerow(self.tree.item(item, "values"))
+
+        elif extension == "xlsx":
+            # Crear un DataFrame para exportar a Excel
+            data = [self.tree.item(item, "values") for item in self.tree.get_children()]
+            df = pd.DataFrame(data, columns=["Fecha", "Número", "Sala", "Tipo", "Asignado"])
+            df.to_excel(archivo, index=False, engine="openpyxl")
+
+        else:
+            messagebox.showerror("Error de exportación", "Formato de archivo no compatible.")
+            return
+
+        messagebox.showinfo("Exportación completada", f"Los datos se han exportado correctamente a {archivo}.")
