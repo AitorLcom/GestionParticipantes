@@ -25,8 +25,9 @@ class MenuPrincipal:
         """Inicializa la ventana principal con menú lateral y contenido dinámico."""
         self.master = master
         self.master.title("Gestor de Participaciones")
-        self.master.geometry("1100x650")
+        self.master.geometry("1170x680")
         self.master.configure(bg="#000000")
+        self.master.resizable(False, False)
 
         # Establecer icono de la ventana desde recurso compatible
         try:
@@ -92,7 +93,7 @@ class MenuPrincipal:
 
         # Mensaje de bienvenida
         mensaje = (
-            "Gestor de participantes V 0.4\n\n"
+            "Gestor de participantes V 0.5\n\n"
         )
         ttk.Label(
             marco,

@@ -1,2 +1,2 @@
 # config.py
-VERSION = "v0.4"
+VERSION = "v0.5"

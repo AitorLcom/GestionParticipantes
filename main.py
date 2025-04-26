@@ -8,8 +8,6 @@ from ui.menu_principal import lanzar_menu
 from estilos import aplicar_estilos
 from actualizador import verificar_actualizacion
 
-verificar_actualizacion()
-
 # Rutas base
 DATA_DIR = "data"
 LOGS_DIR = os.path.join(DATA_DIR, "logs")
@@ -61,6 +59,11 @@ def main():
 
     root = tk.Tk()
     aplicar_estilos(root)
+
+    if not verificar_actualizacion(root):
+        root.destroy()
+        exit()
+
     lanzar_menu(root)
     root.mainloop()
 
