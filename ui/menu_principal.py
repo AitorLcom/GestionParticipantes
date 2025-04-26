@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from PIL import Image, ImageTk
+from tkinter import PhotoImage
 import os
 import sys
 
@@ -83,8 +83,9 @@ class MenuPrincipal:
 
         # Mostrar el logotipo desde ruta compatible con PyInstaller
         try:
-            imagen = Image.open(ruta_recurso("recursos/logo.png")).resize((100, 100))
-            self.logo_img = ImageTk.PhotoImage(imagen)
+            self.logo_img = PhotoImage(file=ruta_recurso("recursos/logo.png"))
+            # Redimensionar la imagen (ajustar los valores según sea necesario)
+            self.logo_img = self.logo_img.subsample(4, 4)  # Reduce el tamaño a 1/4
             ttk.Label(marco, image=self.logo_img, background="#000000").pack(pady=(0, 20))
         except Exception as e:
             print(f"No se pudo cargar el logo: {e}")
