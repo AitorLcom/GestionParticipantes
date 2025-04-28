@@ -31,7 +31,10 @@ El proyecto está organizado en las siguientes carpetas y archivos principales:
 - **main.py**: Punto de entrada principal de la aplicación.
 - **version.json**: Archivo que contiene la versión actual del proyecto.
 
-## Requisitos
+## Requisitos para ejecutar la aplicación empaquetada:
+- Windows 10 o superior.
+
+## Requisitos para ejecutar la aplicación clonando el repositorio
 - Python 3.13 o superior.
 - Librerías adicionales especificadas en el proyecto (si aplica).
 
